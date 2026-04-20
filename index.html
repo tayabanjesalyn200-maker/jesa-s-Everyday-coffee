@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Welcome to Jesa's Everyday Coffee</title>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+<style>
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle, #00ffff 1.5px, transparent 1.5px),
+    radial-gradient(circle, #0099ff 1.5px, transparent 1.5px),
+    radial-gradient(circle, #bd00ff 1.5px, transparent 1.5px);
+  background-size: 45px 45px;
+  background-position: 0 0, 22px 22px, 12px 12px;
+  animation: glitterMove 8s linear infinite;
+  opacity: 0.5;
+  pointer-events: none;
+  z-index: 0;
+}
+
+body {
+background-color:#0d1117;
+font-family: 'Quicksand', sans-serif;
+text-align: center;
+margin: 0;
+position: relative;
+min-height: 100vh;
+box-shadow: inset 0 0 150px 60px rgba(0, 183, 255, 0.4), inset 0 0 250px 100px rgba(189, 0, 255, 0.2);
+animation: glowBg 3s infinite alternate ease-in-out;
+}
+
+h1 {
+font-family: 'Quicksand', sans-serif;
+font-weight: bold;
+font-size: 3rem;
+color:#00ffff;
+margin-top: 20px;
+text-shadow: 0 0 10px #00ffff, 0 0 20px #0099ff, 0 0 30px #bd00ff, 0 0 40px #ff0080;
+position: relative;
+z-index: 1;
+animation: textGlow 2s infinite alternate ease-in-out;
+}
+
+nav {
+position: relative;
+z-index: 1;
+}
+
+nav a {
+text-decoration: none;
+color: #ffffff;
+font-weight: bold;
+margin: 10px;
+padding: 8px 12px;
+border-radius: 12px;
+background-color: #1a1f2e;
+border: 1px solid #ff0080;
+transition: 0.3s;
+position: relative;
+z-index: 1;
+}
+
+nav a:hover {
+background-color:#00ffff;
+color:#0d1117;
+box-shadow: 0 0 15px #00ffff,0 0 25px #0099ff
+}
+
+hr {
+border: 1px solid #0099ff;
+box-shadow: 0 0 10px #0099ff, 0 0 20px #bd00ff;
+margin: 20px auto;
+max-width: 80%;
+position: relative;
+z-index: 1;
+}
+
+.home-container {
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 40px;
+margin: 30px auto;
+position: relative;
+z-index: 1;
+max-width: 1200px;
+}
+
+.big-card {
+background-color:#1a1f2e;
+border: 2px solid transparent;
+background-clip: padding-box;
+border-radius:25px;
+width: 100%;
+max-width: 650px;
+padding:35px;
+animation: boxGlow 1.5s infinite alternate ease-in-out;
+transition: all 0.3s ease;
+color: #e0e0e0;
+position: relative;
+overflow: hidden;
+cursor: pointer;
+}
+
+.big-card::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #00ffff, #0099ff, #bd00ff, #ff0080, #00ffff);
+  border-radius: 25px;
+  z-index: -1;
+  animation: borderColor 3s linear infinite;
+}
+
+.big-card:hover {
+transform: scale(1.03);
+}
+
+.big-card:active {
+transform: scale(0.98);
+box-shadow: 0 0 70px #ff0080, 0 0 150px #ff0080, 0 0 200px #ff0080 !important;
+border-color: #ff0080 !important;
+}
+
+/* ✅ LAYOUT NG UNANG BOX: MAY PIC SA GILID ✅ */
+.welcome-content {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  text-align: left;
+}
+
+.welcome-img {
+  width: 200px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 15px;
+  border: 2px solid #00ffff;
+  box-shadow: 0 0 20px rgba(0,255,255,0.5);
+}
+
+.welcome-text {
+  flex: 1;
+}
+
+.big-card p {
+font-size: 20px; 
+line-height: 1.8;
+color: #ffffff; 
+text-shadow: 0 0 5px #00ffff;
+}
+
+.big-card b {
+color: #00ffff;
+font-size: 24px; 
+text-shadow: 0 0 10px #00ffff, 0 0 20px #ff0080;
+}
+
+.logo-section {
+  margin: 30px auto;
+  position: relative;
+  z-index: 1;
+}
+
+.logo-section img {
+  width: 370px;
+  height: auto;
+  border-radius: 80%;
+  border: 3px solid #00ffff;
+  box-shadow: 0 0 50px #00ffff, 0 0 60px #ff0080;
+}
+
+@keyframes glitterMove {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(45px, 45px); }
+}
+
+@keyframes glowBg {
+  from { box-shadow: inset 0 0 70px 30px rgba(0, 183, 255, 0.3); }
+  to { box-shadow: inset 0 0 120px 60px rgba(0, 183, 255, 0.6); }
+}
+
+@keyframes textGlow {
+  from { text-shadow: 0 0 10px #00ffff, 0 0 20px #0099ff; }
+  to { text-shadow: 0 0 20px #00ffff, 0 0 40px #bd00ff, 0 0 60px #ff0080; }
+}
+@keyframes boxGlow {
+  0% { box-shadow: 0 0 30px #00ffff, 0 0 60px #0099ff; }
+  50% { box-shadow: 0 0 40px #bd00ff, 0 0 80px #ff0080; }
+  100% { box-shadow: 0 0 35px #ff0080, 0 0 70px #00ffff; }
+}
+
+@keyframes borderColor {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+</style>
+</head>
+<body>
+
+<h1>Welcome to Jesa's Everyday Coffee</h1>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="about.html">About Me</a>
+<a href="contact.html">Contact Info</a>
+<a href="goals.html">My Goals</a>
+<a href="environment.html">My Environment</a>
+<a href="future.html">My Future Me</a>
+<a href="ty.html">Thank you</a>
+</nav>
+
+<hr>
+
+<div class="home-container">
+
+  <div class="big-card">
+    <div class="welcome-content">
+      <img src="hi.jpg.jpg"" alt="Welcome Picture" class="welcome-img"> 
+      <div class="Welcome to my personal website">
+        <p>
+       Welcome to my personal website.<br> 
+        This website is all about me, feel free to look around and get to know me well.<br>
+        <b>I hope you  enonjoy exploring and have a great time hire!</b>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="big-card">
+  <div class="logo-section">
+    <img src="logo.jpg.jpg"" alt="Jesa's Coffee Logo">
+  </div>
+    <p>
+    My Logo named "Jesa's Everyday coffee". It Features a minimalist coffee cup pared with rissing sun, symbolizing the warmth and energy that every cup brings to your morning .
+    It's simple, modern, and built to be your companion in everyday routine.<br><br>
+   
+    </p>
+  </div>
+
+</div>
+
+</body>
+</html>
