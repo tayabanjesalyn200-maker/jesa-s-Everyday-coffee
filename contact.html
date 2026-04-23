@@ -2,10 +2,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Contact Me</title>
+<title>Welcome to Jesa's Everyday Coffee - Contact Info</title>
 <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
 <style>
 
+/* ✅ BACKGROUND GLITTER PINK THEME */
 body::before {
   content: "";
   position: fixed;
@@ -14,35 +15,35 @@ body::before {
   width: 100%;
   height: 100%;
   background-image: 
-    radial-gradient(circle, #00ffff 1.5px, transparent 1.5px),
-    radial-gradient(circle, #0099ff 1.5px, transparent 1.5px),
-    radial-gradient(circle, #bd00ff 1.5px, transparent 1.5px);
-  background-size: 45px 45px;
+    radial-gradient(circle, #ffc0cb 1.5px, transparent 1.5px),
+    radial-gradient(circle, #ffb6c1 1.5px, transparent 1.5px),
+    radial-gradient(circle, #ff69b4 1.5px, transparent 1.5px);
+  background-size: 45px 45px, 60px 60px, 35px 35px;
   background-position: 0 0, 22px 22px, 12px 12px;
   animation: glitterMove 8s linear infinite;
-  opacity: 0.5;
+  opacity: 0.7;
   pointer-events: none;
   z-index: 0;
 }
 
 body {
-background-color:#0d1117;
+background-color:#1a0a14;
 font-family: 'Quicksand', sans-serif;
 text-align: center;
 margin: 0;
 position: relative;
 min-height: 100vh;
-box-shadow: inset 0 0 150px 60px rgba(0, 183, 255, 0.4), inset 0 0 250px 100px rgba(189, 0, 255, 0.2);
+box-shadow: inset 0 0 150px 60px rgba(255, 192, 203, 0.4), inset 0 0 250px 100px rgba(255, 105, 180, 0.2);
 animation: glowBg 3s infinite alternate ease-in-out;
 }
 
 h1 {
 font-family: 'Quicksand', sans-serif;
 font-weight: bold;
-font-size: 2.5em;
-color:#00ffff;
+font-size: 2.8em;
+color:#ffc0cb;
 margin-top: 20px;
-text-shadow: 0 0 10px #00ffff, 0 0 20px #0099ff, 0 0 30px #bd00ff, 0 0 40px #ff0080;
+text-shadow: 0 0 15px #ffc0cb, 0 0 30px #ff69b4, 0 0 45px #ff1493;
 position: relative;
 z-index: 1;
 animation: textGlow 2s infinite alternate ease-in-out;
@@ -51,144 +52,152 @@ animation: textGlow 2s infinite alternate ease-in-out;
 nav {
 position: relative;
 z-index: 1;
+margin: 20px 0;
 }
 
 nav a {
 text-decoration: none;
-color: #ffffff;
+color: #1a0a14;
 font-weight: bold;
-margin: 10px;
-padding: 8px 12px;
+margin: 8px;
+padding: 10px 15px;
 border-radius: 12px;
-background-color: #1a1f2e;
-border: 1px solid #ff0080;
+background-color: #ffc0cb !important;
+border: 2px solid #ff69b4;
 transition: 0.3s;
 position: relative;
 z-index: 1;
+box-shadow: 0 0 10px #ffc0cb, 0 0 20px #ff69b4;
 }
 
 nav a:hover {
-background-color:#00ffff;
-color:#0d1117;
-box-shadow: 0 0 15px #00ffff,0 0 25px #0099ff
+background-color:#ff69b4 !important;
+color:#ffffff;
+box-shadow: 0 0 15px #ff69b4,0 0 25px #ff1493;
+transform: scale(1.05);
 }
 
 hr {
-border: 1px solid #0099ff;
-box-shadow: 0 0 10px #0099ff, 0 0 20px #bd00ff;
+border: 1px solid #ff69b4;
+box-shadow: 0 0 10px #ff69b4, 0 0 20px #ffc0cb;
 margin: 20px auto;
-max-width: 80%;
+max-width: 90%;
 position: relative;
 z-index: 1;
 }
 
-.future-container {
+/* ✅ LAYOUT PARA SA 3 BOX MAGKATABI */
+.contact-wrapper {
 display: flex;
-flex-direction: row;
-flex-wrap: wrap;
 justify-content: center;
+align-items: stretch;
 gap: 25px;
-margin: 30px auto;
+flex-wrap: wrap;
+margin: 40px auto;
 position: relative;
 z-index: 1;
 max-width: 1200px;
 }
 
-.big-card {
-background-color:#1a1f2e;
-border: 2px solid transparent;
-background-clip: padding-box;
-border-radius:30px;
+/* ✅ DESIGN NG BAWAT BOX */
+.social-card {
+background-color:#2d1222 !important;
+border: 3px solid;
+border-radius:20px;
 width: 320px;
 padding:20px;
-
-animation: boxGlow 1.5s infinite alternate ease-in-out;
+animation: cardGlow 1.5s infinite alternate ease-in-out, bounce 1s infinite ease-in-out, borderColor 3s infinite linear;
 transition: all 0.3s ease;
-color: #e0e0e0;
+color: #ffffff;
 position: relative;
 overflow: hidden;
 cursor: pointer;
 }
 
-.big-card::before {
+.social-card::before {
   content: '';
   position: absolute;
   top: -2px;
   left: -2px;
   right: -2px;
   bottom: -2px;
-  background: linear-gradient(45deg, #00ffff, #0099ff, #bd00ff, #ff0080, #00ffff);
-  border-radius: 30px;
+  background: linear-gradient(45deg, #ffc0cb, #ff69b4, #ff1493, #ff0080, #ffc0cb);
+  border-radius: 20px;
   z-index: -1;
-  animation: borderColor 3s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
-.big-card:hover {
+.social-card:hover {
 transform: scale(1.03);
+border-color: transparent;
+box-shadow: 0 0 80px #ff69b4, 0 0 150px #ff1493, 0 0 100px #ff0080;
 }
 
-.big-card:active {
-transform: scale(0.98);
-box-shadow: 0 0 70px #ff0080, 0 0 150px #ff0080, 0 0 200px #ff0080 !important;
-border-color: #ff0080 !important;
+.social-card:hover::before {
+  opacity: 1;
 }
 
-.big-card h2 {
-color: #00ffff;
-font-size: 1.5rem;
+.social-card h2 {
+color: #ffc0cb;
+font-size: 1.8rem;
 margin-bottom: 15px;
-text-shadow: 0 0 10px #00ffff;
+text-shadow: 0 0 10px #ffc0cb, 0 0 20px #ff69b4;
 }
 
-.big-card p {
-font-size: 18px;
-line-height: 1.8;
-color: #ffffff; 
-text-shadow: 0 0 5px #00ffff;
-}
-
-.big-card b {
-color: #00ccff;
-font-size: 20px;
-text-shadow: 0 0 8px #00ccff;
-}
-
-.big-card img {
+/* ✅ LUGAR PANG-SCREENSHOT */
+.social-img {
 width: 100%;
-max-height: 250px;
+height: 250px;
 object-fit: cover;
 border-radius: 15px;
-margin: 0 auto 15px auto;
-border: 2px solid #00ffff;
-box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
-display: block !important;
+margin: 10px 0;
+border: 2px solid #ffc0cb;
+box-shadow: 0 0 15px rgba(255, 192, 203, 0.5);
 }
 
+/* ✅ NAME SA BABA */
+.social-name {
+font-size: 18px;
+font-weight: bold;
+margin-top: 15px;
+color: #ffc0cb;
+text-shadow: 0 0 8px #ff69b4;
+}
 
+/* ✅ KEYFRAMES */
 @keyframes glitterMove {
   0% { transform: translate(0, 0); }
   100% { transform: translate(45px, 45px); }
 }
 
 @keyframes glowBg {
-  from { box-shadow: inset 0 0 70px 30px rgba(0, 183, 255, 0.3); }
-  to { box-shadow: inset 0 0 120px 60px rgba(0, 183, 255, 0.6); }
+  from { box-shadow: inset 0 0 70px 30px rgba(255, 192, 203, 0.3); }
+  to { box-shadow: inset 0 0 120px 60px rgba(255, 105, 180, 0.5); }
 }
 
 @keyframes textGlow {
-  from { text-shadow: 0 0 10px #00ffff, 0 0 20px #0099ff; }
-  to { text-shadow: 0 0 20px #00ffff, 0 0 40px #bd00ff, 0 0 60px #ff0080; }
+  from { text-shadow: 0 0 15px #ffc0cb, 0 0 30px #ff69b4; }
+  to { text-shadow: 0 0 25px #ff69b4, 0 0 50px #ff1493, 0 0 75px #ff0080; }
 }
 
-@keyframes boxGlow {
-  0% { box-shadow: 0 0 30px #00ffff, 0 0 60px #0099ff; }
-  50% { box-shadow: 0 0 40px #bd00ff, 0 0 80px #ff0080; }
-  100% { box-shadow: 0 0 35px #ff0080, 0 0 70px #00ffff; }
+@keyframes cardGlow {
+  0% { box-shadow: 0 0 30px #ffc0cb, 0 0 60px rgba(255, 192, 203, 0.5); }
+  50% { box-shadow: 0 0 30px #ff69b4, 0 0 60px rgba(255, 105, 180, 0.5); }
+  100% { box-shadow: 0 0 30px #ff1493, 0 0 60px rgba(255, 20, 147, 0.5); }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
 }
 
 @keyframes borderColor {
-  0% { background-position: 0% 50%; }
-  100% { background-position: 100% 50%; }
+  0% { border-color: #ffc0cb; }
+  25% { border-color: #ff69b4; }
+  50% { border-color: #ff1493; }
+  75% { border-color: #ff0080; }
+  100% { border-color: #ffc0cb; }
 }
 
 </style>
@@ -205,32 +214,33 @@ display: block !important;
 <a href="environment.html">My Environment</a>
 <a href="future.html">My Future Me</a>
 <a href="street.html">Street Photography</a>
+<a href="logo.html">My Logo</a>
 <a href="ty.html">Thank you</a>
 </nav>
 
 <hr>
 
-<div class="future-container">
+<div class="contact-wrapper">
 
-  <!-- FACEBOOK -->
-  <div class="big-card">
-    <h2> FACEBOOK</h2>
-    <img src="fb.jpg.jpg" alt="Facebook">
-    <p><b>Tayaban Jesalyn</b></p>
+  <!-- BOX 1: FACEBOOK -->
+  <div class="social-card">
+    <h2>FACEBOOK</h2>
+    <img src="face.jpg.jpg"" alt="Facebook Screenshot" class="social-img">
+    <div class="social-name">Ghea Mae Lucas Balao</div>
   </div>
 
-  <!-- TIKTOK -->
-  <div class="big-card">
-    <h2> TIKTOK</h2>
-    <img src="tiktok.jpg.jpg" alt="TikTok">
-    <p><b>@userwww46263637</b></p>
+  <!-- BOX 2: TIKTOK -->
+  <div class="social-card">
+    <h2>TIKTOK</h2>
+    <img src="tiktok.jpg.jpg"" alt="TikTok Screenshot" class="social-img">
+    <div class="social-name">@ms.tapaya</div>
   </div>
 
-  <!-- GMAIL -->
-  <div class="big-card">
-    <h2>GMAIL</h2>
-    <img src="gmail.jpg.jpg" alt="Gmail">
-    <p><b>tayabanjesalyn200@gmail.com</b></p>
+  <!-- BOX 3: INSTAGRAM -->
+  <div class="social-card">
+    <h2>INSTAGRAM</h2>
+    <img src="IG.jpg.jpg"" alt="Instagram Screenshot" class="social-img">
+    <div class="social-name">gi_yah_mey</div>
   </div>
 
 </div>
